@@ -1,0 +1,17 @@
+<%- include('partials/header') %>
+
+<section class="page-hero success-hero">
+  <p class="eyebrow">You're in!</p>
+  <h1>Welcome to LearnLoop.</h1>
+  <% if (registrationId && registrationId !== 'spam') { %>
+    <p class="lede">We've sent a confirmation email with your registration ID: <strong><%= registrationId %></strong>.</p>
+  <% } else { %>
+    <p class="lede">Thanks for joining — check your email for confirmation shortly.</p>
+  <% } %>
+  <div class="hero-ctas" style="justify-content:center; margin-top:24px;">
+    <a href="/skills" class="btn btn-coral">Browse free skills</a>
+    <a href="/learn" class="btn btn-outline">Explore Pro courses</a>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

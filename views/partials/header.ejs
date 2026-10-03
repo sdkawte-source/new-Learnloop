@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title><%= typeof pageTitle !== 'undefined' ? pageTitle : 'LearnLoop — Trade Skills, Not Money' %></title>
+<meta name="description" content="<%= typeof pageDescription !== 'undefined' ? pageDescription : 'Join a community where you exchange your expertise for someone else\'s, no fees, just fair trades.' %>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header>
+  <a href="/" class="logo">Learn<span>Loop</span></a>
+  <nav id="siteNav">
+    <ul>
+      <li><a href="/" class="<%= currentPath === '/' ? 'active' : '' %>">Home</a></li>
+      <li><a href="/skills" class="<%= currentPath.startsWith('/skills') ? 'active' : '' %>">Browse Skills</a></li>
+      <li><a href="/learn" class="<%= currentPath.startsWith('/learn') ? 'active' : '' %>">Learn a New Skill</a></li>
+      <li><a href="/how-it-works" class="<%= currentPath === '/how-it-works' ? 'active' : '' %>">How It Works</a></li>
+      <li><a href="/pricing" class="<%= currentPath === '/pricing' ? 'active' : '' %>">Pricing</a></li>
+      <li><a href="/faq" class="<%= currentPath === '/faq' ? 'active' : '' %>">FAQ</a></li>
+      <li><a href="/privacy" class="<%= currentPath === '/privacy' ? 'active' : '' %>">Privacy Policy</a></li>
+    </ul>
+  </nav>
+  <div class="header-actions">
+    <a href="/join" class="btn btn-coral">Join now</a>
+    <button id="menuToggle" class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+  </div>
+</header>
+<main id="main">

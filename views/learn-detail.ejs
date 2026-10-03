@@ -1,0 +1,37 @@
+<%- include('partials/header') %>
+
+<article class="article-page">
+  <p class="eyebrow"><a href="/learn">&larr; Learn a New Skill</a></p>
+  <span class="pro-badge" style="position:static; display:inline-block; margin-bottom:12px;">PRO &mdash; &#8377;499/month</span>
+  <h1><%= skill.title %></h1>
+
+  <section class="article-section">
+    <h2>What Is It?</h2>
+    <p><%= skill.whatIsIt %></p>
+  </section>
+
+  <section class="article-section">
+    <h2>Program Length</h2>
+    <p><%= skill.duration %></p>
+  </section>
+
+  <section class="article-section">
+    <h2>Topics Taught</h2>
+    <ul class="bullet-list">
+      <% skill.topics.forEach(function(t){ %><li><%= t %></li><% }) %>
+    </ul>
+  </section>
+
+  <section class="article-section">
+    <h2>Who This Is For</h2>
+    <p><%= skill.whoFor %></p>
+  </section>
+
+  <section class="article-cta">
+    <h2>Ready to Start?</h2>
+    <p style="color:var(--ink-soft); margin-bottom:16px;">This program requires a LearnLoop Pro subscription (&#8377;499/month).</p>
+    <a href="/join?skill=<%= encodeURIComponent(skill.title) %>&plan=Pro" class="btn btn-coral">Join Pro & Start <%= skill.title %> &rarr;</a>
+  </section>
+</article>
+
+<%- include('partials/footer') %>

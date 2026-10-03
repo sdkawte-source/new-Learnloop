@@ -1,0 +1,24 @@
+<%- include('partials/header') %>
+
+<section class="page-hero dark-hero">
+  <p class="eyebrow">Learn a new skill — professionally taught</p>
+  <h1>Structured courses. Real mentors. A real credential.</h1>
+  <p class="lede">These aren't skill-for-skill swaps — they're guided, multi-week programs led by vetted professionals, built for people who want to go further than a casual exchange. Included with LearnLoop Pro, &#8377;499/month.</p>
+  <p class="cross-link">Just want a free skill swap instead? Visit <a href="/skills">Browse Skills</a>.</p>
+</section>
+
+<section class="card-grid-section dark-section">
+  <div class="card-grid">
+    <% premiumSkills.forEach(function(skill){ %>
+      <div class="skill-article-card pro-card">
+        <img src="<%= skill.image %>" alt="<%= skill.title %>">
+        <span class="pro-badge">PRO</span>
+        <h2><%= skill.title %></h2>
+        <p><%= skill.cardDescription %></p>
+        <a href="/learn/<%= skill.slug %>" class="btn btn-dark">Read Article &rarr;</a>
+      </div>
+    <% }) %>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

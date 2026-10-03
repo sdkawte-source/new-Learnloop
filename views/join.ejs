@@ -1,0 +1,90 @@
+<%- include('partials/header') %>
+
+<section class="page-hero">
+  <p class="eyebrow">Join the program</p>
+  <h1>Bring one skill. Leave with another.</h1>
+  <p class="lede">Tell us what you want to learn and what you can share. We use these details to build better matches, and you'll get an email confirming you're in.</p>
+</section>
+
+<section>
+  <div class="join-wrap">
+    <% if (typeof error !== 'undefined' && error) { %>
+      <div class="form-error"><%= error %></div>
+    <% } %>
+
+    <form id="joinForm" action="/api/join" method="POST" class="join-form">
+      <!-- Honeypot field: hidden from real users via CSS, bots tend to fill every field -->
+      <div class="honeypot">
+        <label for="website">Leave this blank</label>
+        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+      </div>
+
+      <div class="form-row">
+        <label for="fullName">Full name *</label>
+        <input type="text" id="fullName" name="fullName" required>
+      </div>
+
+      <div class="form-row">
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="form-row">
+        <label for="phone">Phone <span class="optional">(optional)</span></label>
+        <input type="tel" id="phone" name="phone">
+      </div>
+
+      <div class="form-row">
+        <label for="city">City *</label>
+        <input type="text" id="city" name="city" required>
+      </div>
+
+      <div class="form-row">
+        <label for="skillToLearn">Skill I want to learn *</label>
+        <select id="skillToLearn" name="skillToLearn" required>
+          <option value="">Choose a skill</option>
+          <optgroup label="Free skill exchange">
+            <% skills.forEach(function(s){ %>
+              <option value="<%= s.title %>" <%= preselectSkill === s.title ? 'selected' : '' %>><%= s.title %></option>
+            <% }) %>
+          </optgroup>
+          <optgroup label="Pro — Learn a New Skill">
+            <% premiumSkills.forEach(function(s){ %>
+              <option value="<%= s.title %>" <%= preselectSkill === s.title ? 'selected' : '' %>><%= s.title %> (Pro)</option>
+            <% }) %>
+          </optgroup>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label for="skillToTeach">Skill I can teach <span class="optional">(optional for Pro courses)</span></label>
+        <input type="text" id="skillToTeach" name="skillToTeach" placeholder="e.g. Cooking, Excel, Photography">
+      </div>
+
+      <div class="form-row">
+        <label>Choose your plan *</label>
+        <div class="plan-toggle">
+          <label class="plan-option">
+            <input type="radio" name="plan" value="Free" <%= preselectPlan !== 'Pro' ? 'checked' : '' %>>
+            <span><strong>Free</strong> &mdash; &#8377;0 forever</span>
+          </label>
+          <label class="plan-option">
+            <input type="radio" name="plan" value="Pro" <%= preselectPlan === 'Pro' ? 'checked' : '' %>>
+            <span><strong>Pro</strong> &mdash; &#8377;499 / month</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="form-row consent-row">
+        <label class="consent-label">
+          <input type="checkbox" name="consent" value="yes" required>
+          I agree to the <a href="/privacy">Privacy Policy</a> and consent to LearnLoop using my details to manage my registration.
+        </label>
+      </div>
+
+      <button type="submit" class="btn btn-coral btn-wide">Join the program &rarr;</button>
+    </form>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

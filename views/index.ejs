@@ -1,0 +1,103 @@
+<%- include('partials/header') %>
+
+<section class="hero">
+  <div class="stripes">
+    <div class="stripe s1"></div>
+    <div class="stripe s2"></div>
+    <div class="stripe s3"></div>
+    <div class="dot" style="left:2%; top:47%"></div>
+    <div class="dot" style="right:4%; top:29%"></div>
+    <div class="dot" style="left:2%; top:65%"></div>
+    <div class="dot" style="right:4%; top:83%"></div>
+  </div>
+  <div class="hero-inner">
+    <p class="eyebrow">Trade skills, not money</p>
+    <h1>Share Your Skills.<br>Learn Something New.</h1>
+    <p class="lede">Join a community where you exchange your expertise for someone else's, no fees, just fair trades.</p>
+    <div class="hero-ctas">
+      <a href="/join" class="btn btn-coral">Start swapping</a>
+      <a href="/skills" class="ghost-link">Browse the skill shelf &rarr;</a>
+    </div>
+  </div>
+  <div class="stat-strip">
+    <div class="stat hover-stat">
+      <div class="stat-face">
+        <div class="num">50+</div>
+        <div class="label">Skills Available to Learn</div>
+      </div>
+      <div class="stat-hover">From coding to cooking, there's always a new direction to explore.</div>
+    </div>
+    <div class="stat hover-stat">
+      <div class="stat-face">
+        <div class="num">8</div>
+        <div class="label">Community Mentors</div>
+      </div>
+      <div class="stat-hover">Early mentors ready to share practical, hard-won knowledge.</div>
+    </div>
+    <div class="stat hover-stat">
+      <div class="stat-face">
+        <div class="num">400+</div>
+        <div class="label">Skill-Swap Hours Completed</div>
+      </div>
+      <div class="stat-hover">Real time spent learning together, not watching alone.</div>
+    </div>
+    <div class="stat hover-stat">
+      <div class="stat-face">
+        <div class="num">12</div>
+        <div class="label">Skill Categories</div>
+      </div>
+      <div class="stat-hover">Creative, technical, practical, language, wellbeing, and more.</div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="section-head">
+    <p class="eyebrow">How it works</p>
+    <h2>Four steps, one loop</h2>
+    <p>No algorithm deciding what you're worth. You find someone, agree on a trade, and both walk away better.</p>
+  </div>
+  <div class="steps">
+    <div class="step"><div class="step-num">01</div><h3>Browse skills</h3><p>Find someone who teaches what you want and wants what you know.</p></div>
+    <div class="step"><div class="step-num">02</div><h3>Match &amp; message</h3><p>Say hello, propose your trade, and agree on a rhythm.</p></div>
+    <div class="step"><div class="step-num">03</div><h3>Swap live</h3><p>Meet online or in person. Take turns being mentor and learner.</p></div>
+    <div class="step"><div class="step-num">04</div><h3>Grow your loop</h3><p>Log your swap, leave feedback, and keep curiosity moving.</p></div>
+  </div>
+</section>
+
+<section class="skills-band" id="skills-preview">
+  <div class="section-head">
+    <p class="eyebrow">The skill shelf</p>
+    <h2>Browse by category</h2>
+    <p>Free skill-for-skill swaps — and if you want structured, professional-led courses instead, check Learn a New Skill.</p>
+  </div>
+  <div class="skill-grid">
+    <% skillsPreview = ["Cooking & Baking","Music & Instruments","Coding & Tech","Languages","Photography","Fitness & Yoga","Art & Design","Business & Writing"] %>
+    <% skillsPreview.forEach(function(s){ %>
+      <div class="skill-card"><h4><%= s %></h4></div>
+    <% }) %>
+  </div>
+  <a href="/skills" class="btn btn-outline" style="margin-top:28px; border-color: var(--line); color: var(--cream);">See all 8 skills &rarr;</a>
+</section>
+
+<section>
+  <div class="section-head">
+    <p class="eyebrow">Swap stories</p>
+    <h2>Good trades. Great plot twists.</h2>
+  </div>
+  <div class="testimonials">
+    <div class="testimonial"><p class="quote">Tom helped me stop overthinking every sentence. I taught him how to let the paint move. Somehow, both lessons were about loosening up.</p><div class="who"><strong>Maya + Tom</strong> &mdash; Watercolor &harr; Spanish</div></div>
+    <div class="testimonial"><p class="quote">We traded five Sunday sessions. My bread finally rises, and Ellis now takes product photos that look like his work feels.</p><div class="who"><strong>Priya + Ellis</strong> &mdash; Sourdough &harr; Photography</div></div>
+    <div class="testimonial"><p class="quote">I built my first useful script. Lila delivered her first talk without reading from a page. A genuinely fair trade.</p><div class="who"><strong>Andre + Lila</strong> &mdash; Python &harr; Public speaking</div></div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <h2>Your first swap is one message away.</h2>
+  <div class="hero-ctas" style="margin-top:24px;">
+    <a href="/join" class="btn" style="background:var(--cream); color:var(--coral);">Join LearnLoop free</a>
+    <a href="/learn" class="btn btn-outline">Explore paid courses</a>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

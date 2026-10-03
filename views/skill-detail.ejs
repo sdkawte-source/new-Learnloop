@@ -1,0 +1,54 @@
+<%- include('partials/header') %>
+
+<article class="article-page">
+  <p class="eyebrow"><a href="/skills">&larr; Browse Skills</a></p>
+  <h1><%= skill.title %></h1>
+
+  <section class="article-section">
+    <h2>What Is <%= skill.title %>?</h2>
+    <p><%= skill.whatIsIt %></p>
+  </section>
+
+  <section class="article-section">
+    <h2>Time to Learn</h2>
+    <p><%= skill.duration %></p>
+  </section>
+
+  <section class="article-section">
+    <h2>Topics Taught</h2>
+    <ul class="bullet-list">
+      <% skill.topics.forEach(function(t){ %><li><%= t %></li><% }) %>
+    </ul>
+  </section>
+
+  <section class="article-section">
+    <h2>How the Skill Exchange Works for <%= skill.title %></h2>
+    <p><%= skill.howExchangeWorks %></p>
+  </section>
+
+  <section class="article-section">
+    <h2>Steps to Get Started</h2>
+    <ol class="numbered-list">
+      <% skill.steps.forEach(function(s){ %><li><%= s %></li><% }) %>
+    </ol>
+  </section>
+
+  <section class="article-section">
+    <h2>Why Learn It This Way</h2>
+    <ul class="bullet-list">
+      <% skill.whyThisWay.forEach(function(w){ %><li><%= w %></li><% }) %>
+    </ul>
+  </section>
+
+  <section class="article-section">
+    <h2>Who This Is For</h2>
+    <p><%= skill.whoFor %></p>
+  </section>
+
+  <section class="article-cta">
+    <h2>Ready to Start?</h2>
+    <a href="/join?skill=<%= encodeURIComponent(skill.title) %>&plan=Free" class="btn btn-coral">Find a <%= skill.title %> Mentor &rarr;</a>
+  </section>
+</article>
+
+<%- include('partials/footer') %>

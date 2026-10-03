@@ -1,0 +1,24 @@
+<%- include('partials/header') %>
+
+<section class="page-hero">
+  <p class="eyebrow">The skill shelf — free exchange</p>
+  <h1>What do you want to learn?</h1>
+  <p class="lede">Pick a starting point. Every skill below is taught live by someone who wants to learn from you, too — no money changes hands.</p>
+  <p class="cross-link">Looking for a structured, professionally taught course instead? Visit <a href="/learn">Learn a New Skill</a>.</p>
+</section>
+
+<section class="card-grid-section">
+  <div class="card-grid">
+    <% skills.forEach(function(skill, i){ %>
+      <div class="skill-article-card">
+        <img src="<%= skill.image %>" alt="<%= skill.title %>">
+        <div class="card-num"><%= String(i+1).padStart(2,'0') %></div>
+        <h2><%= skill.title %></h2>
+        <p><%= skill.cardDescription %></p>
+        <a href="/skills/<%= skill.slug %>" class="btn btn-dark">Read Article &rarr;</a>
+      </div>
+    <% }) %>
+  </div>
+</section>
+
+<%- include('partials/footer') %>
